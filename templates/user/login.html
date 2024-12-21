@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Bengal Meat</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <body>
+        <div class="login-container">
+            <h2>Welcome to Meat Bengal</h2>
+            <form action="/user/login" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Log In</button>
+                <p class="signup-text">Don't have an account? <a href="{{ url_for('user_signup') }}">Sign Up</a></p>
+                <p class="signup-text">For admin log in <a href="{{ url_for('admin_login') }}">Admin</a></p>
+            </form>
+        </div>    
+
+        <!-- Flash Messages Block -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul id="flash-messages" style="display:none;">
+                {% for category, message in messages %}
+                    <li data-category="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <!-- SweetAlert2 Script -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const flashMessages = document.querySelectorAll("#flash-messages li");
+            flashMessages.forEach((msg) => {
+                const category = msg.dataset.category; // e.g., success, error
+                const message = msg.textContent;
+
+                // Map categories to SweetAlert2 styles
+                let swalType = "info"; // Default
+                if (category === "success") swalType = "success";
+                if (category === "error") swalType = "error";
+                if (category === "warning") swalType = "warning";
+
+                // Show the SweetAlert popup
+                Swal.fire({
+                    icon: swalType,
+                    title: message,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                });
+            });
+        });
+        </script>
+    </body>
+</html>

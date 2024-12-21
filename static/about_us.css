@@ -1,0 +1,193 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main wrapper to contain content and footer */
+.main-content {
+    flex: 1; /* Allows the content area to expand and push the footer down */
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #333, #333); /* Transition from white to light black */
+    color: #fff; /* Sets text color to white for better contrast */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* About Us Section */
+#about {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+#about {
+    flex: 1; /* This makes the main content area grow and push the footer down */
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+#about ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    color: #555;
+}
+
+#about ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+.footer .container {
+    display: flex;
+    justify-content:  right;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #111;
+}
+
+.footer-bottom a {
+    color: #f44336;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    header .container,
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+    }
+}
+
+/*for footer positioning
+
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main wrapper to contain content and footer */
+.main-content {
+    flex: 1; /* Allows the content area to expand and push the footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}

@@ -1,0 +1,37 @@
+
+<script>
+    // Add to Cart Functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      const cartButtons = document.querySelectorAll(".add-to-cart");
+  
+      cartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const productCard = button.closest(".product-card");
+          const product = {
+            id: productCard.dataset.id,
+            name: productCard.dataset.name,
+            price: parseFloat(productCard.dataset.price),
+            image: productCard.querySelector(".product-image").src,
+            quantity: 1 // Default quantity
+          };
+  
+          // Send product data to the backend
+          fetch("{{ url_for('add_to_cart') }}", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(product),
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                alert(`${product.name} added to cart!`);
+              } else {
+                alert("Failed to add product to cart.");
+              }
+            });
+        });
+      });
+    });
+  </script>

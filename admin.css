@@ -1,0 +1,89 @@
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(214, 214, 120);
+    color: #333;
+    padding: 40px;
+}
+
+.login-section, .admin-dashboard {
+    max-width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form label, form input, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+form input {
+    padding: 8px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.add-product, .product-list, .sales-summary {
+    margin-top: 20px;
+}
+
+.product-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.product-list button {
+    background-color: #e74c3c;
+}
+
+.product-list button:hover {
+    background-color: #c0392b;
+}
+
+.home-button {
+    font-size: 25px; /* Adjust font size */
+    color: black; /* Set text color */
+    background-color: yellow; /* Change button background color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding for better spacing */
+    border-radius: 5px; /* Round button corners */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.home-button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+    color: #f1f1f1; /* Light text color on hover */
+}
+
+

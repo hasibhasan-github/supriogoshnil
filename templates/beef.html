@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beef - Meat Bangla</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='all_item.css') }}"
+    />
+    <!-- Link to your CSS file -->
+    <script defer src="cart.js"></script>
+    <!-- Link to JavaScript for cart functionality -->
+  </head>
+  <body>
+    <!-- header Section -->
+    <header>
+      <div class="container">
+        <h1 style="flex: 1">Meat Bangla</h1>
+        <!-- Flex: 1 pushes h1 to the left -->
+        <nav style="display: flex; justify-content: flex-end">
+          <ul style="display: flex; gap: 20px; list-style: none; margin: 0">
+            <li><a href="{{ url_for('user_dashboard') }}">Home</a></li>
+            <!-- <li><a href="#products">Products</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li>
+              <a href="{{ url_for('cart') }}">Cart</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="products">
+      <div class="section-header">
+        <h2><span class="icon">🏷️</span> Beef</h2>
+      </div>
+      <div
+        class="product-card"
+        data-id="beef1"
+        data-name="Beef Lean Boneless"
+        data-price="1450"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Beef Lean Boneless.jpg') }}"
+          alt="Beef Lean BoneLess"
+          class="product-image"
+        />
+        <h2>Beef Lean BoneLess</h2>
+        <p>1 kg</p>
+        <p>Price: ৳1450</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div
+        class="product-card"
+        data-id="beef2"
+        data-name="Beef Rib Eye"
+        data-price="3500"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Beef Rib Eye.jpg') }}"
+          alt="Beef Rib Eye"
+          class="product-image"
+        />
+        <h2>Beef Rib Eye</h2>
+        <p>1 kg</p>
+        <p>Price: ৳3500</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div
+        class="product-card"
+        data-id="beef3"
+        data-name="Beef Premium Keema"
+        data-price="1450"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Beef Premium Keema.jpg') }}"
+          alt="Beef Premium Keema"
+          class="product-image"
+        />
+        <h2>Beef Premium Keema</h2>
+        <p>1 kg</p>
+        <p>Price: ৳1450</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div
+        class="product-card"
+        data-id="beef4"
+        data-name="Beef T-Bone Steak"
+        data-price="3400"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Beef T-Bone Steak.jpg') }}"
+          alt="Beef T-Bone Steak"
+          class="product-image"
+        />
+        <h2>Beef T-Bone Steak</h2>
+        <p>1 kg</p>
+        <p>Price: ৳3400</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div
+        class="product-card"
+        data-id="beef5"
+        data-name="Beef Tehari Cut"
+        data-price="840"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Beef Tehari Cut.jpg') }}"
+          alt="Beef Tehari Cut"
+          class="product-image"
+        />
+        <h2>Beef Tehari Cut</h2>
+        <p>1 kg</p>
+        <p>Price: ৳840</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-section">
+          <h3>Meat Bangla</h3>
+          <p>
+            Meat Bangla is an online-based meat company offering fresh meat
+            delivery system for customers.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li>About</li>
+            <li>Services</li>
+            <li>Team</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Support</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Get in Touch</h3>
+          <ul>
+            <li><a href="2221077@iub.edu.bd">2221077@iub.edu.bd</a></li>
+            <li>01724213918</li>
+            <li>
+              <a href="#"><img src="twitter.png" alt="" /></a>
+              <a href="#"><img src="facebook.png" alt="" /></a>
+              <a href="#"><img src="instagram.png" alt="" /></a>
+              <a href="#"><img src="gmail.png" alt="" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; Copyright Reserved to <a href="#">Meat Bangla</a> by
+          Themefisher
+        </p>
+      </div>
+    </footer>
+    <footer>
+      <p style="background-color: #333">
+        &copy; Meat Bangla. All rights reserved.
+      </p>
+    </footer>
+    <script src="cart.js"></script>
+
+    {% include 'javascript.html' %}
+    
+
+
+  </body>
+</html>

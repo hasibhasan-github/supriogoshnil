@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about_us.css') }}">
+    <script src="index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="flex: 1;">Meat Bangla</h1> <!-- Flex: 1 pushes h1 to the left -->
+            <nav style="display: flex; justify-content: flex-end;">
+                <ul style="display: flex; gap: 20px; list-style: none; margin: 0;">
+                    <li><a href="{{ url_for('user_dashboard') }}">Home</a></li>
+                    <!-- <li><a href="#products">Products</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!-- About Us Section -->
+<section id="about" style="padding: 40px; background-color: #f9f9f9;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 2em; margin-bottom: 20px; color: #333;">About Meat Bangla</h2>
+        <p style="font-size: 1.1em; line-height: 1.6; color: #555;">
+            Welcome to Meat Bangla, your reliable source for the freshest, highest-quality meats. We're committed to bringing you a wide selection of premium meat products, sourced directly from trusted farms and delivered right to your doorstep. At MeatBangla, quality, freshness, and exceptional taste are our priorities.
+        </p>
+
+        <h3 style="font-size: 1.5em; margin-top: 30px; color: #333;">Our Mission</h3>
+        <p style="font-size: 1.1em; line-height: 1.6; color: #555;">
+            Our mission is to make top-quality, sustainable meat accessible to everyone. By partnering with local farms that follow ethical practices, we ensure that our products are fresh, safe, and transparently sourced, giving our customers a better choice for healthy and delicious meals.
+        </p>
+
+        <h3 style="font-size: 1.5em; margin-top: 30px; color: #333;">Why Choose Us?</h3>
+        <ul style="font-size: 1.1em; line-height: 1.8; color: #555; list-style-type: none; padding: 0;">
+            <li style="margin-bottom: 10px;">✅ Premium, fresh meat sourced from trusted farms</li>
+            <li style="margin-bottom: 10px;">✅ Quick and reliable delivery to your door</li>
+            <li style="margin-bottom: 10px;">✅ Commitment to sustainability and ethical practices</li>
+            <li style="margin-bottom: 10px;">✅ Exceptional customer service and support</li>
+        </ul>
+
+        <h3 style="font-size: 1.5em; margin-top: 30px; color: #333;">Our Values</h3>
+        <p style="font-size: 1.1em; line-height: 1.6; color: #555;">
+            Meat Bangla is built on the values of quality, trust, and customer satisfaction. We believe in providing food that is fresh, sustainably sourced, and handled with care. As we continue to grow, we remain dedicated to upholding these values and to enhancing the quality of your dining experience.
+        </p>
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-section">
+            <h3>Meat Bangla</h3>
+            <p>
+              Meat Bangla is an online-based meat company offering fresh meat
+              delivery system for customers.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+              <li>About</li>
+              <li>Services</li>
+              <li>Team</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+              <li>Terms & Conditions</li>
+              <li>Privacy Policy</li>
+              <li>Support</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Get in Touch</h3>
+            <ul>
+              <li><a href="2221077@iub.edu.bd">2221077@iub.edu.bd</a></li>
+              <li>01724213918</li>
+              <li>
+                <a href="#"><img src="twitter.png" alt="" /></a>
+                <a href="#"><img src="facebook.png" alt="" /></a>
+                <a href="#"><img src="instagram.png" alt="" /></a>
+                <a href="#"><img src="gmail.png" alt="" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; Copyright Reserved to <a href="#">Meat Bangla</a> by
+            Themefisher
+          </p>
+        </div>
+      </footer>
+      <footer>
+        <p style="background-color: #333">
+          &copy; Meat Bangla. All rights reserved.
+        </p>
+      </footer>
+      <script src="cart.js"></script>
+    </body>
+  </html>

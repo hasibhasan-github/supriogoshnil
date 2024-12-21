@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicken - Meat Bangla</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='all_item.css') }}"
+    />
+    <!-- Link to your CSS file -->
+    <script defer src="cart.js"></script>
+    <!-- Link to JavaScript for cart functionality -->
+  </head>
+  <body>
+    <!-- header Section -->
+    <header>
+      <div class="container">
+        <h1 style="flex: 1">Meat Bangla</h1>
+        <!-- Flex: 1 pushes h1 to the left -->
+        <nav style="display: flex; justify-content: flex-end">
+          <ul style="display: flex; gap: 20px; list-style: none; margin: 0">
+            <li><a href="{{ url_for('user_dashboard') }}">Home</a></li>
+            <!-- <li><a href="#products">Products</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li>
+              <a href="{{ url_for('cart') }}">Cart</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="products">
+      <div class="section-header">
+        <h2><span class="icon">🏷️</span> Chicken</h2>
+      </div>
+      <div
+        class="product-card"
+        data-id="chicken1"
+        data-name="Whole Chicken (Skin-On)"
+        data-price="390"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Whole_Chicken(skin_on).jpg') }}"
+          alt="Whole Chicken (Skin On)"
+          class="product-image"
+        />
+        <h2>Whole Chicken (Skin On)</h2>
+        <p>1 kg</p>
+        <p>Price: ৳390</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div
+        class="product-card"
+        data-id="chicken2"
+        data-name="Whole Chicken (Skinless)"
+        data-price="395"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Whole_Chicken(skinless).jpg.jpg') }}"
+          alt="Whole Chicken (Skinless)"
+          class="product-image"
+        />
+        <h2>Whole Chicken (Skinless)</h2>
+        <p>1 kg</p>
+        <p>Price: ৳395</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div
+        class="product-card"
+        data-id="chicken3"
+        data-name="Chicken Drumstick"
+        data-price="480"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Chicken_drumstick.jpg') }}"
+          alt="Chicken Drumstick"
+          class="product-image"
+        />
+        <h2>Chicken Drumstick</h2>
+        <p>1 kg</p>
+        <p>Price: ৳480</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div
+        class="product-card"
+        data-id="chicken4"
+        data-name="Chicken Wings"
+        data-price="370"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Chicken_wings.jpg') }}"
+          alt="Chicken Wings"
+          class="product-image"
+        />
+        <h2>Chicken Wings</h2>
+        <p>1 kg</p>
+        <p>Price: ৳370</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div
+        class="product-card"
+        data-id="chicken5"
+        data-name="Chicken Fillet"
+        data-price="805"
+      >
+        <img
+        src="{{ url_for('static', filename='images/Chicken_fillet.jpg') }}"
+          alt="Chicken Fillet"
+          class="product-image"
+        />
+        <h2>Chicken Fillet</h2>
+        <p>1 kg</p>
+        <p>Price: ৳805</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- Add more mutton cuts as needed -->
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-section">
+          <h3>Meat Bangla</h3>
+          <p>
+            Meat Bangla is an online-based meat company offering fresh meat
+            delivery system for customers.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li>About</li>
+            <li>Services</li>
+            <li>Team</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Support</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Get in Touch</h3>
+          <ul>
+            <li><a href="2221077@iub.edu.bd">2221077@iub.edu.bd</a></li>
+            <li>01724213918</li>
+            <li>
+              <a href="#"><img src="twitter.png" alt="" /></a>
+              <a href="#"><img src="facebook.png" alt="" /></a>
+              <a href="#"><img src="instagram.png" alt="" /></a>
+              <a href="#"><img src="gmail.png" alt="" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; Copyright Reserved to <a href="#">Meat Bangla</a> by
+          Themefisher
+        </p>
+      </div>
+    </footer>
+    <footer>
+      <p style="background-color: #333">
+        &copy; Meat Bangla. All rights reserved.
+      </p>
+    </footer>
+    <script src="cart.js"></script>
+    {% include 'javascript.html' %}
+  </body>
+</html>

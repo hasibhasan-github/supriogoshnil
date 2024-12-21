@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meat Bangla</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 style="flex: 1">Meat Bangla</h1>
+        <nav style="display: flex; justify-content: flex-end">
+          <ul style="display: flex; gap: 20px; list-style: none; margin: 0">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- <li><a href="#products">Products</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="{{ url_for('user_login') }}">Log In</a></li>
+            <li>
+              <a href="{{ url_for('cart') }}">Cart</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section
+      id="home"
+      style="
+        background-image: url(image/main_cover.d3667d78.png);
+        height: 600px;
+      "
+    >
+      <div class="hero" style="margin-right: 300px; padding: 40px">
+        <h2>Welcome to Meat Bangla</h2>
+        <p>Your one-stop shop for all your needs!</p>
+        <a href="#products" class="btn" style="margin-right: 6rem">Shop Now </a>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2>Featured Products</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='images/chicken.png') }}"
+            alt="Product 1"
+          />
+          <h3>Chicken</h3>
+          <li>
+            <a href="{{ url_for('chicken') }}">
+                <button>View</button>
+            </a>
+          </li>
+        </div>
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='images/mutton.png') }}"
+            alt="Product 2"
+          />
+          <h3>Mutton</h3>
+          <li>
+            <a href="{{ url_for('mutton') }}">
+                <button>View</button>
+            </a>
+          </li>
+        </div>
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='images/beef.png') }}"
+            alt="Product 3"
+          />
+          <h3>Beef</h3>
+          <li>
+            <a href="{{ url_for('beef') }}">
+                <button>View</button>
+            </a>
+          </li>
+        </div>
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='images/fish.png') }}"
+            alt="Product 2"
+          />
+          <h3>Fish</h3>
+          <li>
+            <a href="{{ url_for('fish') }}">
+                <button>View</button>
+            </a>
+          </li>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer section -->
+    <section class="best-sellers">
+      <div class="section-header">
+        <h2><span class="icon">🏷️</span> Best Sellers</h2>
+      </div>
+      <div class="carousel">
+        <button class="carousel-control prev">&lt;</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/goat.jpg') }}"
+                alt="Paratha 20 Pcs"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/cow-with-wheat-in-mouth.png') }}"
+                alt="Beef Head Meat"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/chicken_2.webp') }}"
+                alt="Beef Bone In"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/fish_2.webp') }}"
+                alt="Beef Bone In"
+              />
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-control next">&gt;</button>
+      </div>
+    </section>
+
+    <!-- Why meat bangla -->
+    <section class="why-bengal-meat" id="carousel-2">
+      <h2><span class="title-words">Why Meat Bangla?</span></h2>
+      <p>
+        <span class="middle-words"
+          >Meat Bangla is an online meat delivery platform that offers fresh,
+          premium-quality meat products sourced from trusted suppliers. It
+          provides a seamless shopping experience with features like a cart
+          system, multiple payment options, and automatic voucher discounts.
+          Customers can conveniently order beef, mutton, chicken, and fish,
+          ensuring quality and reliability from farm to table.</span
+        >
+      </p>
+    </section>
+
+    <section class="best-sellers" id="carousel-2">
+      <div class="section-header"></div>
+      <div class="carousel">
+        <button class="carousel-control prev">&lt;</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/w1.jpg') }}"
+                alt="Chicken Biryani"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/w2.jpg') }}"
+                alt="Lamb"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/w3.jpg') }}"
+                alt="Seafood"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/w4.jpg') }}"
+                alt="Fish Curry"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/w5.jpg') }}"
+                alt="Fish Curry"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/w6.jpg') }}"
+                alt="Fish Curry"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/w7.jpg') }}"
+                alt="Fish Curry"
+              />
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="{{ url_for('static', filename='images/w8.jpg') }}"
+                alt="Fish Curry"
+              />
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-control next">&gt;</button>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-section">
+          <h3>Meat Bangla</h3>
+          <p>
+            Meat Bangla is an online-based meat company offering fresh meat
+            delivery system for customers.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li>About</li>
+            <li>Services</li>
+            <li>Team</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Support</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Get in Touch</h3>
+          <ul>
+            <li><a href="2221077@iub.edu.bd">2221077@iub.edu.bd</a></li>
+            <li>01724213918</li>
+            <li>
+              <a href="#"><img src="twitter.png" alt="" /></a>
+              <a href="#"><img src="facebook.png" alt="" /></a>
+              <a href="#"><img src="instagram.png" alt="" /></a>
+              <a href="#"><img src="gmail.png" alt="" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; Copyright Reserved to <a href="#">Meat Bangla</a> by
+          Themefisher
+        </p>
+      </div>
+    </footer>
+
+    <footer>
+      <p style="background-color: #333">
+        &copy; 2024 Meat Bangla. All rights reserved.
+      </p>
+    </footer>
+    <script src="index.js"></script>
+
+    <!-- Flash Messages Block -->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <ul id="flash-messages" style="display: none">
+      {% for category, message in messages %}
+      <li data-category="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+    <!-- SweetAlert2 Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const flashMessages = document.querySelectorAll("#flash-messages li");
+        flashMessages.forEach((msg) => {
+          const category = msg.dataset.category; // e.g., success, error
+          const message = msg.textContent;
+
+          // Map categories to SweetAlert2 styles
+          let swalType = "info"; // Default
+          if (category === "success") swalType = "success";
+          if (category === "error") swalType = "error";
+          if (category === "warning") swalType = "warning";
+
+          // Show the SweetAlert popup
+          Swal.fire({
+            icon: swalType,
+            title: message,
+            timer: 3000,
+            timerProgressBar: true,
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+          });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const track = document.querySelector(".carousel-track");
+        const slides = Array.from(track.children);
+        let currentSlideIndex = 0;
+
+        function moveToNextSlide() {
+          currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          track.style.transform = `translateX(-${
+            slideWidth * currentSlideIndex
+          }px)`;
+        }
+
+        setInterval(moveToNextSlide, 3000);
+      });
+
+      document.querySelectorAll(".best-sellers").forEach((carousel) => {
+        const track = carousel.querySelector(".carousel-track");
+        const slides = Array.from(track.children);
+        const prevButton = carousel.querySelector(".carousel-control.prev");
+        const nextButton = carousel.querySelector(".carousel-control.next");
+
+        let currentSlideIndex = 0;
+
+        // Function to update slide position
+        function updateSlidePosition() {
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          track.style.transform = `translateX(-${
+            currentSlideIndex * slideWidth
+          }px)`;
+        }
+
+        // Event listener for the "Previous" button
+        prevButton.addEventListener("click", () => {
+          // Decrement the index; wrap around to the last slide if index is < 0
+          currentSlideIndex =
+            (currentSlideIndex - 1 + slides.length) % slides.length;
+          updateSlidePosition();
+        });
+
+        // Event listener for the "Next" button
+        nextButton.addEventListener("click", () => {
+          // Increment the index; wrap around to the first slide if index exceeds last slide
+          currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+          updateSlidePosition();
+        });
+
+        // Initialize the first slide position
+        updateSlidePosition();
+      });
+    </script>
+  </body>
+</html>

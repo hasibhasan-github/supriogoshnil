@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ShopEase</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register for Meat Bangla</h2>
+        <form action="/user/sign-up" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select type="text" id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="remarks">Remarks</label>
+                <textarea id="remarks" name="remarks" rows="3" placeholder="Optional"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" id="password" name="password" required></input>
+            </div>
+            <button type="submit">Register</button>
+            <p class="login-text">Already have an account? <a href="{{ url_for('user_login') }}">Login here</a></p>
+        </form>
+    </div>
+
+    <!-- Flash Messages Block -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul id="flash-messages" style="display:none;">
+            {% for category, message in messages %}
+                <li data-category="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+
+    <!-- SweetAlert2 Script -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const flashMessages = document.querySelectorAll("#flash-messages li");
+        flashMessages.forEach((msg) => {
+            const category = msg.dataset.category; // e.g., success, error
+            const message = msg.textContent;
+
+            // Map categories to SweetAlert2 styles
+            let swalType = "info"; // Default
+            if (category === "success") swalType = "success";
+            if (category === "error") swalType = "error";
+            if (category === "warning") swalType = "warning";
+
+            // Show the SweetAlert popup
+            Swal.fire({
+                icon: swalType,
+                title: message,
+                timer: 3000,
+                timerProgressBar: true,
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+            });
+        });
+    });
+    </script>
+</body>
+</html>
